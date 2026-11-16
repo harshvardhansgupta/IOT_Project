@@ -102,7 +102,7 @@ Slot state is published on a debounced change and refreshed every 5 seconds. `ts
 
 In Wokwi, the ultrasonic sensor's adjustable Distance control represents the car. There is no animated car model moving into a bay; the car icon in the dashboard marks occupied bays.
 
-## 8. Explain it to the teacher
+## 8. About
 
 - **Sensor rule:** an HC-SR04 reading below 20 cm means a car is present; no echo or an out-of-range reading is treated as a free space.
 - **Debouncing:** the candidate state must remain the same for 450 ms before the slot changes. This filters brief sensor noise while keeping parking updates responsive.

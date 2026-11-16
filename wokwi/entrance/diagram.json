@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "author": "AI457 Smart Parking",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 250,
+      "left": 80,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd",
+      "top": 110,
+      "left": 440,
+      "attrs": {
+        "pins": "i2c",
+        "i2cAddress": "0x27"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label",
+      "top": 55,
+      "left": 80,
+      "attrs": {
+        "text": "SMART PARKING - ENTRANCE DISPLAY"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "lcd:VCC",
+      "esp:3V3",
+      "red"
+    ],
+    [
+      "lcd:GND",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "lcd:SDA",
+      "esp:21",
+      "green"
+    ],
+    [
+      "lcd:SCL",
+      "esp:22",
+      "blue"
+    ]
+  ],
+  "dependencies": {}
+}

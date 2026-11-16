@@ -1,0 +1,480 @@
+{
+  "version": 1,
+  "author": "AI457 Smart Parking",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 180,
+      "left": 70,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "s1",
+      "top": 185,
+      "left": 385,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label1",
+      "top": 130,
+      "left": 380,
+      "attrs": {
+        "text": "F3-S1"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "s2",
+      "top": 185,
+      "left": 555,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label2",
+      "top": 130,
+      "left": 550,
+      "attrs": {
+        "text": "F3-S2"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "s3",
+      "top": 185,
+      "left": 725,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label3",
+      "top": 130,
+      "left": 720,
+      "attrs": {
+        "text": "F3-S3"
+      }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "s4",
+      "top": 185,
+      "left": 895,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label4",
+      "top": 130,
+      "left": 890,
+      "attrs": {
+        "text": "F3-S4"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "green1",
+      "top": 330,
+      "left": 390,
+      "attrs": {
+        "color": "green",
+        "label": "S1 GREEN"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rgreen1",
+      "top": 335,
+      "left": 325,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "red1",
+      "top": 402,
+      "left": 505,
+      "attrs": {
+        "color": "red",
+        "label": "S1 RED"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rred1",
+      "top": 407,
+      "left": 440,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "green2",
+      "top": 330,
+      "left": 620,
+      "attrs": {
+        "color": "green",
+        "label": "S2 GREEN"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rgreen2",
+      "top": 335,
+      "left": 555,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "red2",
+      "top": 402,
+      "left": 735,
+      "attrs": {
+        "color": "red",
+        "label": "S2 RED"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rred2",
+      "top": 407,
+      "left": 670,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "green3",
+      "top": 330,
+      "left": 850,
+      "attrs": {
+        "color": "green",
+        "label": "S3 GREEN"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rgreen3",
+      "top": 335,
+      "left": 785,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "red3",
+      "top": 402,
+      "left": 965,
+      "attrs": {
+        "color": "red",
+        "label": "S3 RED"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rred3",
+      "top": 407,
+      "left": 900,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "green4",
+      "top": 330,
+      "left": 1080,
+      "attrs": {
+        "color": "green",
+        "label": "S4 GREEN"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rgreen4",
+      "top": 335,
+      "left": 1015,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "red4",
+      "top": 402,
+      "left": 1195,
+      "attrs": {
+        "color": "red",
+        "label": "S4 RED"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "rred4",
+      "top": 407,
+      "left": 1130,
+      "rotate": 90,
+      "attrs": {
+        "value": "220"
+      }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": 440,
+      "left": 120,
+      "attrs": {
+        "pins": "i2c",
+        "i2cAddress": "0x27"
+      }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "floorlabel",
+      "top": 75,
+      "left": 70,
+      "attrs": {
+        "text": "FLOOR 3 - FOUR ULTRASONIC PARKING SLOTS"
+      }
+    }
+  ],
+  "connections": [
+    [
+      "s1:VCC",
+      "esp:5V",
+      "red"
+    ],
+    [
+      "s1:GND",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "s1:TRIG",
+      "esp:5",
+      "green"
+    ],
+    [
+      "s1:ECHO",
+      "esp:34",
+      "green"
+    ],
+    [
+      "s2:VCC",
+      "esp:5V",
+      "red"
+    ],
+    [
+      "s2:GND",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "s2:TRIG",
+      "esp:17",
+      "blue"
+    ],
+    [
+      "s2:ECHO",
+      "esp:35",
+      "blue"
+    ],
+    [
+      "s3:VCC",
+      "esp:5V",
+      "red"
+    ],
+    [
+      "s3:GND",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "s3:TRIG",
+      "esp:18",
+      "orange"
+    ],
+    [
+      "s3:ECHO",
+      "esp:25",
+      "orange"
+    ],
+    [
+      "s4:VCC",
+      "esp:5V",
+      "red"
+    ],
+    [
+      "s4:GND",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "s4:TRIG",
+      "esp:19",
+      "purple"
+    ],
+    [
+      "s4:ECHO",
+      "esp:23",
+      "purple"
+    ],
+    [
+      "esp:13",
+      "rgreen1:1",
+      "green"
+    ],
+    [
+      "rgreen1:2",
+      "green1:A",
+      "green"
+    ],
+    [
+      "green1:C",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "esp:14",
+      "rred1:1",
+      "red"
+    ],
+    [
+      "rred1:2",
+      "red1:A",
+      "green"
+    ],
+    [
+      "red1:C",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "esp:26",
+      "rgreen2:1",
+      "orange"
+    ],
+    [
+      "rgreen2:2",
+      "green2:A",
+      "green"
+    ],
+    [
+      "green2:C",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "esp:27",
+      "rred2:1",
+      "blue"
+    ],
+    [
+      "rred2:2",
+      "red2:A",
+      "green"
+    ],
+    [
+      "red2:C",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "esp:32",
+      "rgreen3:1",
+      "purple"
+    ],
+    [
+      "rgreen3:2",
+      "green3:A",
+      "green"
+    ],
+    [
+      "green3:C",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "esp:33",
+      "rred3:1",
+      "cyan"
+    ],
+    [
+      "rred3:2",
+      "red3:A",
+      "green"
+    ],
+    [
+      "red3:C",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "esp:4",
+      "rgreen4:1",
+      "yellow"
+    ],
+    [
+      "rgreen4:2",
+      "green4:A",
+      "green"
+    ],
+    [
+      "green4:C",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "esp:16",
+      "rred4:1",
+      "magenta"
+    ],
+    [
+      "rred4:2",
+      "red4:A",
+      "green"
+    ],
+    [
+      "red4:C",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "lcd:VCC",
+      "esp:3V3",
+      "red"
+    ],
+    [
+      "lcd:GND",
+      "esp:GND.1",
+      "black"
+    ],
+    [
+      "lcd:SDA",
+      "esp:21",
+      "green"
+    ],
+    [
+      "lcd:SCL",
+      "esp:22",
+      "blue"
+    ]
+  ],
+  "dependencies": {}
+}

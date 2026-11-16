@@ -1,0 +1,9 @@
+{
+  "name": "smart-multifloor-parking-edge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI457 MQTT edge server for Wokwi smart parking",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "mqtt": "^5.10.4" }
+}
